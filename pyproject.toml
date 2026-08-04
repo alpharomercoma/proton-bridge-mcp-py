@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "proton-bridge-mcp"
+version = "1.0.0"
+description = "Thin Python wrapper (pip/uvx installable) for the proton-bridge-mcp MCP server, which reads/searches Proton Mail via Proton Mail Bridge. Requires Node.js; runs the real Node implementation via npx."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [{ name = "Alpha Romer Coma" }]
+keywords = ["mcp", "model-context-protocol", "proton-mail", "proton-bridge", "imap", "claude", "email"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Communications :: Email",
+]
+
+[project.urls]
+Homepage = "https://github.com/alpharomercoma/proton-bridge-mcp-py"
+"Upstream (Node implementation)" = "https://github.com/alpharomercoma/proton-bridge-mcp"
+Issues = "https://github.com/alpharomercoma/proton-bridge-mcp-py/issues"
+
+[project.scripts]
+proton-bridge-mcp = "proton_bridge_mcp.__main__:run_server"
+proton-bridge-mcp-setup = "proton_bridge_mcp.__main__:run_setup"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/proton_bridge_mcp"]
