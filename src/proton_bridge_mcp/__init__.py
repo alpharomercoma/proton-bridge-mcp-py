@@ -7,6 +7,6 @@ who prefer a Python-shaped install don't need to know it's Node underneath.
 Source of truth: https://github.com/alpharomercoma/proton-bridge-mcp
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 NPM_PACKAGE = "@alpharomercoma/proton-bridge-mcp"

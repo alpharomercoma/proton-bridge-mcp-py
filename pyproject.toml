@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "proton-bridge-mcp"
-version = "1.0.0"
+version = "1.0.1"
 description = "Thin Python wrapper (pip/uvx installable) for the proton-bridge-mcp MCP server, which reads/searches Proton Mail via Proton Mail Bridge. Requires Node.js; runs the real Node implementation via npx."
 readme = "README.md"
 license = "MIT"
