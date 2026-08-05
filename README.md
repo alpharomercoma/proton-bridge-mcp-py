@@ -47,6 +47,24 @@ claude mcp add proton-mail -s user -- proton-bridge-mcp
 }
 ```
 
+**Codex CLI:**
+
+Tested end-to-end against Codex CLI 0.146.0 via `uvx`, with a real Bridge connection and real tool calls. MCP support is behind an under-development feature flag as of 0.146.0 — enable it once:
+
+```bash
+codex features enable mcp_2026_07_28
+```
+
+Then register the server:
+
+```bash
+codex mcp add proton-mail -- uvx proton-bridge-mcp
+```
+
+`uvx` resolves and caches per exact version, so (unlike a bare `npx` invocation of the underlying npm package) it isn't at risk of silently picking up a stale global install — no version pinning needed here. All four tools are read-only IMAP calls and carry `readOnlyHint` annotations, so they run in both interactive `codex` and non-interactive `codex exec` without an approval prompt.
+
+Note this wrapper always execs into whatever npm tag is `latest` for the underlying `@alpharomercoma/proton-bridge-mcp` package — see that repo's README for the one caveat that does apply if you've separately run `npm install -g` on the same machine.
+
 ## Why does this exist separately from the npm package?
 
 The actual server (`list_mailboxes`, `list_messages`, `search_messages`, `get_message` tools; TLS certificate pinning instead of disabled verification; the setup wizard) lives entirely in the Node.js project: **https://github.com/alpharomercoma/proton-bridge-mcp**. That's the canonical implementation, source of truth for behavior, and where issues/PRs about actual functionality belong. This repo only exists to make it reachable from `pip`/`uvx` workflows.
