@@ -12,7 +12,7 @@ def _require_npx():
     sys.stderr.write(
         "proton-bridge-mcp: this package is a thin wrapper around the Node.js "
         f"implementation ({NPM_PACKAGE}) and requires Node.js/npx on PATH.\n"
-        "Install Node.js 18+ from https://nodejs.org and try again.\n"
+        "Install Node.js 20+ from https://nodejs.org and try again.\n"
     )
     sys.exit(1)
 

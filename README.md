@@ -8,7 +8,7 @@ Unofficial, community project. Not affiliated with or endorsed by Proton AG.
 
 ## Requirements
 
-- **Node.js 18+** must be installed and on `PATH` (specifically `npx`). This wrapper cannot function without it — there is no pure-Python fallback.
+- **Node.js 20+** must be installed and on `PATH` (specifically `npx`). This wrapper cannot function without it — there is no pure-Python fallback.
 - A Proton Mail plan that supports Bridge, with [Proton Mail Bridge](https://proton.me/mail/bridge) running
 
 ## Install
